@@ -1,0 +1,17 @@
+name = "armada-store-cloudflare"
+type = "javascript"
+main = "src/main.jsx"
+compatibility_date = "2024-04-01"
+
+[build]
+command = "npm run build"
+cwd = "./"
+watch_paths = ["src/**/*.jsx", "src/**/*.css"]
+
+[env.production]
+routes = [
+  { pattern = "armada-store-cloudflare.pages.dev", zone_name = "pages.dev" }
+]
+
+[site]
+bucket = "./dist"
